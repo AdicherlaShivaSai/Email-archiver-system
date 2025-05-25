@@ -63,10 +63,10 @@ npm start
 - You’ll be redirected and the system will start archiving
 
 ## 📦 Folder Structure
-
+```bash
 email-archiver/
 ├── index.js
-├── .env.example
+├── .env
 ├── init.sql
 ├── oauth/
 │   └── googleAuth.js
@@ -75,6 +75,7 @@ email-archiver/
 ├── utils/
 │   └── emailParser.js
 ├── db/
-│   └── pool.js
+│   └── db.js
 └── README.md
+```
 
