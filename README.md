@@ -33,9 +33,48 @@ npm install
 ```bash
 cp .env.example .env
 ```
-```psql
+#### psql
+```
 GOOGLE_CLIENT_ID=your-client-id
 GOOGLE_CLIENT_SECRET=your-secret
 GOOGLE_REDIRECT_URI=http://localhost:3000/oauth2callback
 PG_CONNECTION_STRING=postgres://postgres:postgres@localhost:5432/ea_db
 ```
+
+### 4. Set Up PostgreSQL (via Docker)
+```bash
+docker run --name ea-postgres `
+  -e POSTGRES_USER=postgres `
+  -e POSTGRES_PASSWORD=postgres `
+  -e POSTGRES_DB=ea_db `
+  -p 5432:5432 `
+  -v "%cd%/init.sql:/docker-entrypoint-initdb.d/init.sql" `
+  -d postgres
+```
+
+### 5. Run the Server
+```bash
+npm start
+```
+
+## 🔐 Authentication Flow
+- Open browser at: http://localhost:3000/auth
+- Authorize Gmail account
+- You’ll be redirected and the system will start archiving
+
+## 📦 Folder Structure
+
+email-archiver/
+├── index.js
+├── .env.example
+├── init.sql
+├── oauth/
+│   └── googleAuth.js
+├── services/
+│   └── gmailService.js
+├── utils/
+│   └── emailParser.js
+├── db/
+│   └── pool.js
+└── README.md
+
