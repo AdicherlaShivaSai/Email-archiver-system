@@ -1,0 +1,16 @@
+{
+  "name": "email-archiver",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "googleapis": "^118.0.0",
+    "mime-types": "^2.1.35",
+    "pg": "^8.10.0",
+    "psql": "^0.0.1"
+  }
+}
