@@ -77,5 +77,7 @@ email-archiver/
 ├── db/
 │   └── db.js
 └── README.md
+└── package.json
+└── package-lock.json
 ```
 
